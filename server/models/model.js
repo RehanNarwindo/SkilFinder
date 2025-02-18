@@ -7,13 +7,11 @@ class Model {
             const query = `INSERT INTO "Users" (name, gender, email, password, role) VALUES ($1, $2, $3, $4, $5) RETURNING *`;
             const values = [name, gender, email, password, role];
             console.log("masuk sini", values);
-        
+
             const { rows } = await pool.query(query, values);
             console.log(rows, "check rows");
-            
-            console.log(rows, "test row");
 
-            return rows[0];
+            return Factory.create("Users", rows[0].id, rows[0].name, rows[0].gender, rows[0].email, rows[0].password, rows[0].role);
         } catch (error) {
             throw error;
         }
@@ -23,15 +21,54 @@ class Model {
         try {
             const query = `SELECT * FROM "Users" WHERE email = $1`;
             const values = [email];
-            console.log(email, "terst ");
-            
             const result = await pool.query(query, values);
-            console.log(result, "ini result ");
-            
-            return result.rows[0];
+
+            if (!result.rows[0]) return null;
+
+            const user = result.rows[0];
+            return Factory.create("Users", user.id, user.name, user.gender, user.email, user.password, user.role);
         } catch (error) {
             console.log(error);
+            throw error;
+        }
+    }
+    static async getUserById(id) {
+        try {
+            const query = `SELECT * FROM "Users" WHERE id = $1`;
+            const values = [id];
+            const result = await pool.query(query, values);
+
+            if (!result.rows[0]) return null;
+
+            const user = result.rows[0];
+            return Factory.create("Users", user.id, user.name, user.gender, user.email, user.password, user.role);
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    }
+    static async getAllStudents() {
+        try {
+            const query = `SELECT * FROM "Users" WHERE role = $1`;
+            const values = ["students"];
+            const result = await pool.query(query, values);
+            // console.log(result.rows, "result");
             
+            if (!result.rows[0]) return null;
+            
+        return result.rows; 
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    }
+    static async getAllQuestions(){
+        try {
+            const query = `SELECT * FROM "Questions"`;
+            const result = await pool.query(query);
+            if (!result.rows[0]) return null;
+           return result.rows;
+        } catch (error) {
             throw error;
         }
     }

@@ -70,14 +70,23 @@ class Controller {
         }
     }
     static async getAllStudents(req, res, next) {
-        // next(error)
         try {
-            
+           const result = await Model.getAllStudents();
+           console.log(result);
+           res.status(200).json({ message: "get All students successfully", data: result });
         } catch (error) {
             next(error)
         }
     }
-    
+    static async getAllQuestions(req, res, next) {
+        try {
+           const result = await Model.getAllQuestions();
+           console.log(result);
+           res.status(200).json({ message: "get All questions successfully", data: result });
+        } catch (error) {
+            next(error)
+        }
+    }
 }
 
 module.exports = Controller;

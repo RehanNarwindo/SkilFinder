@@ -11,6 +11,8 @@ route.post("/login", Controller.login)
 route.post("/register", Controller.register)
 route.use(authentication)
 route.get("/getAllStudents", Controller.getAllStudents)
+route.get("/getAllQuestions", Controller.getAllQuestions)
+
 
 // route.get("/home", Controller.home)
 

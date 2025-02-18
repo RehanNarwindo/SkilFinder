@@ -1,0 +1,103 @@
+[
+    {
+      "id": 1,
+      "question": "Apa ibu kota Indonesia?",
+      "category": "Geografi"
+    },
+    {
+      "id": 2,
+      "question": "Siapa presiden pertama Indonesia?",
+      "category": "Sejarah"
+    },
+    {
+      "id": 3,
+      "question": "Apa nama planet terbesar di tata surya?",
+      "category": "Ilmu Pengetahuan Alam"
+    },
+    {
+      "id": 4,
+      "question": "Siapa penemu telepon?",
+      "category": "Teknologi"
+    },
+    {
+      "id": 5,
+      "question": "Apa nama ibu kota Jepang?",
+      "category": "Geografi"
+    },
+    {
+      "id": 6,
+      "question": "Siapa penulis buku Laskar Pelangi?",
+      "category": "Sastra"
+    },
+    {
+      "id": 7,
+      "question": "Berapa jumlah provinsi di Indonesia?",
+      "category": "Geografi"
+    },
+    {
+      "id": 8,
+      "question": "Apa nama gunung tertinggi di Indonesia?",
+      "category": "Ilmu Pengetahuan Alam"
+    },
+    {
+      "id": 9,
+      "question": "Siapa yang menemukan teori relativitas?",
+      "category": "Ilmu Pengetahuan Alam"
+    },
+    {
+      "id": 10,
+      "question": "Apa yang dimaksud dengan fotosintesis?",
+      "category": "Biologi"
+    },
+    {
+      "id": 11,
+      "question": "Siapa presiden Indonesia saat ini?",
+      "category": "Politik"
+    },
+    {
+      "id": 12,
+      "question": "Apa nama buku terkenal karya Mario Teguh?",
+      "category": "Sastra"
+    },
+    {
+      "id": 13,
+      "question": "Apa itu hukum Newton?",
+      "category": "Fisika"
+    },
+    {
+      "id": 14,
+      "question": "Apa yang dimaksud dengan sistem demokrasi?",
+      "category": "Politik"
+    },
+    {
+      "id": 15,
+      "question": "Siapa yang menciptakan Facebook?",
+      "category": "Teknologi"
+    },
+    {
+      "id": 16,
+      "question": "Apa itu perubahan iklim?",
+      "category": "Lingkungan"
+    },
+    {
+      "id": 17,
+      "question": "Siapa penemu mesin uap?",
+      "category": "Sejarah"
+    },
+    {
+      "id": 18,
+      "question": "Apa nama hewan yang memiliki cangkang keras?",
+      "category": "Biologi"
+    },
+    {
+      "id": 19,
+      "question": "Siapa penulis novel Harry Potter?",
+      "category": "Sastra"
+    },
+    {
+      "id": 20,
+      "question": "Berapa banyak sisi pada sebuah kubus?",
+      "category": "Matematika"
+    }
+  ]
+  
