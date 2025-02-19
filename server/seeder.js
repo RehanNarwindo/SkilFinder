@@ -2,12 +2,12 @@ const pool = require("./config");
 
 const dataQuestions = require("./data/questions.json")
   .map((el) => {
-    const { question, category } = el;
-    return `('${question}', '${category}')`;
+    const { question, category, isUsed } = el;
+    return `('${question}', '${category}', '${isUsed}')`;
   })
   .join(", \n");
 
-  const queryQuestions = `insert into "Questions"("question", "category")
+  const queryQuestions = `insert into "Questions"("question", "category", "isUsed")
   values ${dataQuestions}`;
   
 async function seedQuestions() {
@@ -19,4 +19,4 @@ async function seedQuestions() {
     }
   }
 
-//   seedQuestions()
+  // seedQuestions()

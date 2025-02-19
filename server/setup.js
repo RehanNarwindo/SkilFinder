@@ -8,33 +8,44 @@ const queryTableUsers = `CREATE TABLE IF NOT EXISTS "Users" (
     gender VARCHAR(10) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     password TEXT NOT NULL,
-    role VARCHAR(50) NOT NULL
+    role VARCHAR(50) NOT NULL,
+    "createdAt" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )`;
 
 const queryTableQuestions = `CREATE TABLE IF NOT EXISTS "Questions" (
     id SERIAL PRIMARY KEY,
     question TEXT NOT NULL,
-    category VARCHAR(100) NOT NULL
+    category VARCHAR(100) NOT NULL,
+    "isUsed" Boolean NOT NULL,
+    "createdAt" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )`;
 
 const queryTableRules = `CREATE TABLE IF NOT EXISTS "Rules" (
     id SERIAL PRIMARY KEY,
     condition TEXT NOT NULL,
-    conclusion TEXT NOT NULL
+    conclusion TEXT NOT NULL,
+    "createdAt" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )`;
 
 const queryTableAnswers = `CREATE TABLE IF NOT EXISTS "Answers" (
     id SERIAL PRIMARY KEY,
     "userId" INT REFERENCES "Users"(id) ON DELETE CASCADE,
     "questionId" INT REFERENCES "Questions"(id) ON DELETE CASCADE,
-    answer TEXT NOT NULL
+    answer TEXT NOT NULL,
+    "createdAt" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )`;
 
 const queryTableResults = `CREATE TABLE IF NOT EXISTS "Results" (
     id SERIAL PRIMARY KEY,
     "userId" INT REFERENCES "Users"(id) ON DELETE CASCADE,
     talent VARCHAR(100) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    "createdAt" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+
 )`;
 
 async function createTable() {

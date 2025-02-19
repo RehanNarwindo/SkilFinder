@@ -72,6 +72,7 @@ class Model {
             throw error;
         }
     }
+    
 }
 
 module.exports = Model;

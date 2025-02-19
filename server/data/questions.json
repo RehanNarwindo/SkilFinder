@@ -1,103 +1,122 @@
 [
-    {
-      "id": 1,
-      "question": "Apa ibu kota Indonesia?",
-      "category": "Geografi"
-    },
-    {
-      "id": 2,
-      "question": "Siapa presiden pertama Indonesia?",
-      "category": "Sejarah"
-    },
-    {
-      "id": 3,
-      "question": "Apa nama planet terbesar di tata surya?",
-      "category": "Ilmu Pengetahuan Alam"
-    },
-    {
-      "id": 4,
-      "question": "Siapa penemu telepon?",
-      "category": "Teknologi"
-    },
-    {
-      "id": 5,
-      "question": "Apa nama ibu kota Jepang?",
-      "category": "Geografi"
-    },
-    {
-      "id": 6,
-      "question": "Siapa penulis buku Laskar Pelangi?",
-      "category": "Sastra"
-    },
-    {
-      "id": 7,
-      "question": "Berapa jumlah provinsi di Indonesia?",
-      "category": "Geografi"
-    },
-    {
-      "id": 8,
-      "question": "Apa nama gunung tertinggi di Indonesia?",
-      "category": "Ilmu Pengetahuan Alam"
-    },
-    {
-      "id": 9,
-      "question": "Siapa yang menemukan teori relativitas?",
-      "category": "Ilmu Pengetahuan Alam"
-    },
-    {
-      "id": 10,
-      "question": "Apa yang dimaksud dengan fotosintesis?",
-      "category": "Biologi"
-    },
-    {
-      "id": 11,
-      "question": "Siapa presiden Indonesia saat ini?",
-      "category": "Politik"
-    },
-    {
-      "id": 12,
-      "question": "Apa nama buku terkenal karya Mario Teguh?",
-      "category": "Sastra"
-    },
-    {
-      "id": 13,
-      "question": "Apa itu hukum Newton?",
-      "category": "Fisika"
-    },
-    {
-      "id": 14,
-      "question": "Apa yang dimaksud dengan sistem demokrasi?",
-      "category": "Politik"
-    },
-    {
-      "id": 15,
-      "question": "Siapa yang menciptakan Facebook?",
-      "category": "Teknologi"
-    },
-    {
-      "id": 16,
-      "question": "Apa itu perubahan iklim?",
-      "category": "Lingkungan"
-    },
-    {
-      "id": 17,
-      "question": "Siapa penemu mesin uap?",
-      "category": "Sejarah"
-    },
-    {
-      "id": 18,
-      "question": "Apa nama hewan yang memiliki cangkang keras?",
-      "category": "Biologi"
-    },
-    {
-      "id": 19,
-      "question": "Siapa penulis novel Harry Potter?",
-      "category": "Sastra"
-    },
-    {
-      "id": 20,
-      "question": "Berapa banyak sisi pada sebuah kubus?",
-      "category": "Matematika"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "question": "Apakah Anda lebih suka kegiatan fisik atau kegiatan yang lebih tenang?",
+    "category": "Olahraga",
+    "isUsed": true
+  },
+  {
+    "id": 2,
+    "question": "Apakah Anda tertarik dengan seni dan kreativitas, seperti menggambar atau musik?",
+    "category": "Seni",
+    "isUsed": true
+  },
+  {
+    "id": 3,
+    "question": "Apakah Anda memiliki minat dalam olahraga tim atau individu?",
+    "category": "Olahraga",
+    "isUsed": true
+  },
+  {
+    "id": 4,
+    "question": "Apakah Anda tertarik untuk mengembangkan keterampilan kepemimpinan?",
+    "category": "Kepemimpinan",
+    "isUsed": true
+  },
+  {
+    "id": 5,
+    "question": "Apakah Anda suka melakukan kegiatan luar ruangan seperti hiking atau berkebun?",
+    "category": "Olahraga",
+    "isUsed": true
+  },
+  {
+    "id": 6,
+    "question": "Apakah Anda tertarik dengan kegiatan yang berfokus pada pemecahan masalah dan analisis?",
+    "category": "Teknologi",
+    "isUsed": true
+  },
+  {
+    "id": 7,
+    "question": "Apakah Anda lebih suka bekerja dalam kelompok atau secara mandiri?",
+    "category": "Kepemimpinan",
+    "isUsed": true
+  },
+  {
+    "id": 8,
+    "question": "Apakah Anda tertarik mengikuti kegiatan yang berhubungan dengan dunia sains atau teknologi?",
+    "category": "Teknologi",
+    "isUsed": true
+  },
+  {
+    "id": 9,
+    "question": "Apakah Anda suka tantangan fisik dan ingin mencoba olahraga yang lebih ekstrem?",
+    "category": "Olahraga",
+    "isUsed": true
+  },
+  {
+    "id": 10,
+    "question": "Apakah Anda suka berinteraksi dengan orang lain dan mengembangkan keterampilan komunikasi?",
+    "category": "Kepemimpinan",
+    "isUsed": true
+  },
+  {
+    "id": 11,
+    "question": "Apakah Anda lebih tertarik dengan olahraga yang membutuhkan teknik atau kekuatan fisik?",
+    "category": "Olahraga",
+    "isUsed": true
+  },
+  {
+    "id": 12,
+    "question": "Apakah Anda lebih suka kegiatan yang berhubungan dengan seni visual atau seni pertunjukan?",
+    "category": "Seni",
+    "isUsed": true
+  },
+  {
+    "id": 13,
+    "question": "Apakah Anda lebih tertarik pada kegiatan sosial atau yang berfokus pada keterampilan individu?",
+    "category": "Kepemimpinan",
+    "isUsed": true
+  },
+  {
+    "id": 14,
+    "question": "Apakah Anda ingin mengembangkan keterampilan komunikasi dan presentasi?",
+    "category": "Kepemimpinan",
+    "isUsed": true
+  },
+  {
+    "id": 15,
+    "question": "Apakah Anda tertarik untuk mencoba olahraga yang melibatkan air, seperti berenang atau selancar?",
+    "category": "Olahraga",
+    "isUsed": true
+  },
+  {
+    "id": 16,
+    "question": "Apakah Anda lebih tertarik untuk mengikuti kegiatan yang berfokus pada teknologi atau seni kreatif?",
+    "category": "Teknologi",
+    "isUsed": true
+  },
+  {
+    "id": 17,
+    "question": "Apakah Anda suka mengerjakan proyek yang melibatkan kerja tim atau lebih suka bekerja sendiri?",
+    "category": "Kepemimpinan",
+    "isUsed": true
+  },
+  {
+    "id": 18,
+    "question": "Apakah Anda lebih tertarik pada olahraga yang berfokus pada strategi atau kekuatan fisik?",
+    "category": "Olahraga",
+    "isUsed": true
+  },
+  {
+    "id": 19,
+    "question": "Apakah Anda tertarik untuk mengembangkan keterampilan dalam dunia digital atau media sosial?",
+    "category": "Teknologi",
+    "isUsed": true
+  },
+  {
+    "id": 20,
+    "question": "Apakah Anda lebih tertarik untuk belajar keterampilan baru yang berhubungan dengan bisnis atau kreativitas?",
+    "category": "Kepemimpinan",
+    "isUsed": true
+  }
+]

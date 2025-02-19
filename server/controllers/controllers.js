@@ -87,6 +87,17 @@ class Controller {
             next(error)
         }
     }
+    static async answerSubmit(req, res, next){
+        try {
+            const list = await Model.getAllQuestions();
+            console.log(list, "list pertanyaan");
+            res.status(200).json({ message: "get All questions successfully", data: list });
+
+            
+        } catch (error) {
+            next(error)
+        }
+    }
 }
 
 module.exports = Controller;
