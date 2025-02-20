@@ -1,5 +1,5 @@
 class Users {
-    constructor(id, name, gender, email, password, role, createdAt, updatedAt) {
+    constructor(id, name, gender, email, password, role, createdAt = new Date(), updatedAt = new Date()) {
       this.id = id;
       this.name = name;
       this.gender = gender;
@@ -12,7 +12,7 @@ class Users {
   }
   
   class Questions {
-    constructor(id, question, category, createdAt, updatedAt) {
+    constructor(id, question, category, createdAt = new Date(), updatedAt = new Date()) {
       this.id = id;
       this.question = question;
       this.category = category;
@@ -22,7 +22,7 @@ class Users {
   }
   
   class Rules {
-    constructor(id, condition, conclusion, createdAt, updatedAt) {
+    constructor(id, condition, conclusion,createdAt = new Date(), updatedAt = new Date()) {
       this.id = id;
       this.condition = condition;
       this.conclusion = conclusion;
@@ -32,7 +32,7 @@ class Users {
   }
   
   class Answers {
-    constructor(id, userId, questionId, answer, createdAt, updatedAt) {
+    constructor(id, userId, questionId, answer, createdAt = new Date(), updatedAt = new Date()) {
       this.id = id;
       this.userId = userId;
       this.questionId = questionId;
@@ -40,10 +40,11 @@ class Users {
       this.createdAt = createdAt;
       this.updatedAt = updatedAt;
     }
-  }
+}
+
   
   class Result {
-    constructor(id, userId, talent, createdAt, updatedAt = new Date()) {
+    constructor(id, userId, talent, createdAt = new Date(), updatedAt = new Date()) {
       this.id = id;
       this.userId = userId;
       this.talent = talent;

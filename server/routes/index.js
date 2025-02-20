@@ -12,7 +12,9 @@ route.post("/register", Controller.register)
 route.use(authentication)
 route.get("/getAllStudents", Controller.getAllStudents)
 route.get("/getAllQuestions", Controller.getAllQuestions)
-route.post("/answerSubmit", Controller.answerSubmit)
+route.get("/getQuestionsById/:id", Controller.getQuestionsById)
+route.get("/getAnswerUser", Controller.getAnswerUser)
+route.post("/answerSubmit/:id", Controller.answerSubmit);
 
 
 

@@ -34,6 +34,10 @@ module.exports = function errorHandler(error, req, res, next) {
           status = 400;
           message = "Password must be at least 8 characters long";
           break;
+      case "QuestionsNotFound":
+        status = 404;
+        message = "Questions not found";
+        break;
   }
 console.log(status, message);
 

@@ -39,6 +39,6 @@ module.exports = async function authentication(req, res, next) {
 
         next();
     } catch (error) {
-        next(error); // Mengirim error ke error handler global
+        next(error); 
     }
 };

@@ -50,14 +50,12 @@ class Model {
     static async getAllStudents() {
         try {
             const query = `SELECT * FROM "Users" WHERE role = $1`;
-            const values = ["students"];
-            const result = await pool.query(query, values);
-            // console.log(result.rows, "result");
-            
+            const values = [questionId];
+            const result = await pool.query(query, values);            
             if (!result.rows[0]) return null;
             
-        return result.rows; 
-        } catch (error) {
+            return Factory.create("Users", user.id, user.name, user.gender, user.email, user.password, user.role);
+            } catch (error) {
             console.log(error);
             throw error;
         }
@@ -72,7 +70,95 @@ class Model {
             throw error;
         }
     }
+    static async getQuestionsById(questionId){
+        try {
+            const query = `SELECT * FROM "Questions" WHERE id = $1`;
+            console.log(questionId, "quesytion id");
+            
+            const value = [questionId]
+            const result = await pool.query(query, value)
+            if (!result.rows) return null;
+            return result.rows;
+        } catch (error) {
+            throw error;
+        }
+    }
+    static async getAnswerById(userId, questionId){
+        try {
+            const query = `SELECT * FROM "Answers" WHERE "userId" = $1 AND "questionId" = $2`
+            const value = [userId, questionId]
+            const result = await pool.query(query, value);
+            if (!result.rows[0]) return null;
+            return result.rows;
+        } catch (error) {
+            throw error
+        }
+    }
+    static async getAnswerByIdUser(userId){
+        try {
+            console.log(userId, "userId di model getByUserId");
+            
+            const query = `SELECT * FROM "Answers" WHERE "userId" = $1`
+            const value = [userId]
+            const result = await pool.query(query, value);
+            console.log(result, "hasil di getAnswerByIdUser");
+            
+            if (!result.rows[0]) return null;
+            return result.rows;
+        } catch (error) {
+            console.log(error, "error di getAnswerByIdUser");
+            
+            throw error
+        }
+    }
+    static async postAnswer(userId, questionId, answer) {
+        try {
+            console.log(answer ,"jawaban di postAnswer");
+            
+            const answerData = Factory.create("Answers", null, userId, questionId, answer, new Date(), new Date());
+            console.log(answerData, "jawaban");
+            
+            
+            const query = `
+                INSERT INTO "Answers" ("userId", "questionId", answer, "createdAt", "updatedAt")
+                VALUES ($1, $2, $3, $4, $5)
+                RETURNING *;
+            `;
+
+            const values = [
+                answerData.userId,
+                answerData.questionId,
+                answerData.answer,
+                answerData.createdAt,
+                answerData.updatedAt
+            ];
+
+            const result = await pool.query(query, values);
+            return result.rows[0];
+        } catch (error) {
+            console.log(error, "error di postAnswer");
+            
+            throw new Error(`Error saving answer: ${error.message}`);
+        }
+    }
+    static async putAnswer(id, answer) {
+        try {
+            const query = `
+                UPDATE "Answers"
+                SET answer = $1, "updatedAt" = NOW()
+                WHERE id = $2
+                RETURNING *;
+            `;
+            const values = [answer, id];
     
+            const result = await pool.query(query, values);
+            return result.rows[0];
+        } catch (error) {
+            console.log(error, "error di edit jawaban");
+            
+            throw new Error(`Error updating answer: ${error.message}`);
+        }
+    }
 }
 
 module.exports = Model;

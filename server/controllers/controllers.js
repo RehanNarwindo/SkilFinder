@@ -87,13 +87,53 @@ class Controller {
             next(error)
         }
     }
-    static async answerSubmit(req, res, next){
+    static async getQuestionsById(req, res, next) {
         try {
-            const list = await Model.getAllQuestions();
-            console.log(list, "list pertanyaan");
-            res.status(200).json({ message: "get All questions successfully", data: list });
-
+            const questionsId = Number(req.params.id);
             
+           const result = await Model.getQuestionsById(questionsId);
+           console.log(result);
+           res.status(200).json({ message: "get All questions successfully", data: result });
+        } catch (error) {
+            console.log(error, "errornya");
+            
+            next(error)
+        }
+    }
+    static async answerSubmit(req, res, next) {
+        try {
+            const questionId = req.params.id;
+            const userId = req.user.id;
+            const { answer } = req.body;
+
+            console.log(questionId, "=====" ,answer ,"answer", userId);
+            
+           
+           const question = await Model.getQuestionsById(questionId);
+           if (!question) {
+            throw { name: "QuestionsNotFound" };
+            }
+            let savedAnswer;
+            const checkAnswer = await Model.getAnswerById(userId, questionId);
+            if (checkAnswer) {
+                savedAnswer = await Model.putAnswer(checkAnswer.id, answer);
+                res.status(200).json({ message: "Answer updated successfully", data: savedAnswer });
+            } else {
+                savedAnswer = await Model.postAnswer(userId, questionId, answer);
+                res.status(201).json({ message: "Answer submitted successfully", data: savedAnswer });
+            }
+            
+        } catch (error) {
+            next(error);
+        }
+    }
+    static async getAnswerUser(req, res, next){
+        try {
+            const {id} = req.body
+            const userAnswers = await Model.getAnswerByIdUser(id);
+            console.log(userAnswers, "jawaban user");
+            res.status(200).json({ message: "get Answer user successfully", data: userAnswers });
+
         } catch (error) {
             next(error)
         }
