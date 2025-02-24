@@ -138,6 +138,20 @@ class Controller {
             next(error)
         }
     }
+    static async getResult(req, res, next){
+        try {
+            const {id} = req.user
+            console.log(id, "id user");
+            const dataAnswer = Model.getAnswerByIdUser(id);
+            console.log(dataAnswer, "data yang di dapat");
+            
+            // const result = Model.getResultinterest(dataAnswer)
+
+            
+        } catch (error) {
+            next(error)
+        }
+    }
 }
 
 module.exports = Controller;

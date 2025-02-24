@@ -64,7 +64,7 @@ async function createTable() {
 
     await pool.query(queryTableAnswers);
     console.log("Create table Answers success");
-
+    
     await pool.query(queryTableResults);
     console.log("Create table Results success");
   } catch (error) {

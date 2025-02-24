@@ -2,7 +2,6 @@ const express = require("express");
 const route = express.Router();
 const Controller = require("../controllers/controllers")
 const authentication = require("../middlewares/authentication")
-// const errorHandler = require("../middlewares/errorHandler")
 
 route.post("/login", Controller.login)
 // route.get("/login", (req, res)=> {

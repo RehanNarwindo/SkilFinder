@@ -28,7 +28,7 @@ class Model {
             const user = result.rows[0];
             return Factory.create("Users", user.id, user.name, user.gender, user.email, user.password, user.role);
         } catch (error) {
-            console.log(error);
+            console.log(error, "error di get by email model");
             throw error;
         }
     }
@@ -97,8 +97,7 @@ class Model {
     static async getAnswerByIdUser(userId){
         try {
             console.log(userId, "userId di model getByUserId");
-            
-            const query = `SELECT * FROM "Answers" WHERE "userId" = $1`
+            const query = `SELECT * FROM "Answers" INNER JOIN "Questions" ON "Questions".id="Answers"."questionId" WHERE "userId" = $1`
             const value = [userId]
             const result = await pool.query(query, value);
             console.log(result, "hasil di getAnswerByIdUser");
